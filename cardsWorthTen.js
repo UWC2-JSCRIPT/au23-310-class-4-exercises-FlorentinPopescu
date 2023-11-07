@@ -14,14 +14,20 @@ const cards = [
   { val: 11, displayVal: "Ace", suit: "hearts" }
 ];
 
-/**
- * Takes an array of cards and returns a string of the card display
- * values where the value is equal to 10
- *
- * @param {array} cards
- * @return {string} displayVal
- */
-const cardsWorthTen = cards => {};
+const cardsWorthTen = cards => {
+  /**
+     * Takes an array of cards and returns a string of the card display
+     * values where the value is equal to 10
+    *
+    * @param {array} cards
+    * @return {string} displayVal
+  */
+
+  return  cards
+              .filter((card) => card.val === 10)
+              .map(card => card.displayVal).join(' ');
+  
+};
 
 console.log(cardsWorthTen(cards));
 // should return/log "10, Jack, Queen, King"

@@ -1,54 +1,55 @@
-/**
- * Returns an array of 52 Cards
- * @returns {Array} deck - a deck of cards
- */
 const getDeck = () => {
+  /**
+    * Returns an array of 52 Cards
+    * @returns {Array} deck - a deck of cards
+  */
+
   const deck = []
   const suits = ['hearts', 'spades', 'clubs', 'diamonds']
 
   for (let index = 0; index < suits.length; index++) {
     // create an array of 13 objects
-    for (let j = 1; j <= 13; j++) {
+    for (let j = 2; j <= 14; j++) {
       // for each loop, push a card object to the deck
-
+     
       // special cases for when j > 10
-      const displayVal = ''
+      let displayVal = '';
 
-      switch (j) {
-        case j === 1:
-          displayVal = 'Ace'
-          break
-        case j > 1 && j <= 10:
+      switch (true) {
+        case j >= 2 && j <= 10:
           displayVal = j
           break
         case j === 11:
-          displayVal = 'Jack'
+          displayVal = 'Ace'
           break
         case j === 12:
-          displayVal = 'Queen'
+          displayVal = 'Jack'
           break
         case j === 13:
+          displayVal = 'Queen'
+          break
+        case j === 14:
           displayVal = 'King'
           break
       }
 
       const card = {
-        val: j,
+        val: j > 11 ? 10 : j,
         displayVal: displayVal,
         suit: suits[index],
       }
-
-      if (displayVal === 'Ace') {
-        card.val = 11
-      }
-
+     
       deck.push(card)
     }
-  }
+  }       
+  return deck;
 }
 
+console.log(getDeck());
+
+/*---------------------------------------------------*/
 // CHECKS
-const deck = getDeck()
+const deck = getDeck();
 console.log(`Deck length equals 52? ${deck.length === 52}`)
 
 const randomCard = deck[Math.floor(Math.random() * 52)]

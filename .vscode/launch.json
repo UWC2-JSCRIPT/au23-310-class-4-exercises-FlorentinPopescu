@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open blackjack.html",
+            "file": "c:\\Users\\HP\\Desktop\\01_UW_JavaScript\\Lesson_04\\au23-310-class-4-exercises-FlorentinPopescu\\blackjack.html"
+        }
+    ]
+}
